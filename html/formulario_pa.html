@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Librerias de estilo -->
+    <link rel="stylesheet" href="../css/estilo.css">
+    <!------------------------->
+    <title>Pacientes</title>
+</head>
+<body>
+    <header>
+        <h1 class="fir_enun">
+            <img class="logo" src="../img/Las-Cruces-B.png">
+                Formulario para Pacientes
+                <img class="logo" src="../img/Las-Cruces-B.png">
+            </h1>
+        <hr>
+        <nav>
+            <a id="vinculo_ini" href="./index.html">
+                <div id="inicio" class="caja_index">
+                    <!-- <h3>Inicio</h3> Nombre del recurso-->
+                    <img src="../img/Las-Cruces.png">
+                </div>
+            </a>
+            <a id="vinculo_do" href="./formulario_do.html">
+                <div id="main_doctor" class="caja_index">
+                    <!-- <h3>Doctores</h3> Nombre del recurso-->
+                    <img src="../img/Doctor-sinFon.png">
+                    
+                </div>
+            </a>
+        </nav>
+        <hr>
+    </header>
+
+    <main id="main">
+        <h3 class="fir_enun">Rellene los siguientes campos y espere la debida respuesta.</h3>
+            <div>
+                <form class="paciente">
+                    <!-- Datos del paciente -->
+                    <div class="caja">
+                        <label for="pa_name" class="labels">Nombre: </label>
+                        <input id="pa_name" name="pa_name" class="inputs" type="text" placeholder="Ingrese su nombre completo">
+
+                        <label for="pa_lastname" class="labels">Apellido: </label>
+                        <input id="pa_lastname" name="pa_lastname" class="inputs" type="text" placeholder="Ingrese sus apellidos">
+                    </div>
+
+                    <div class="caja">
+                        <label for="pa_cedula" class="labels">Número de cédula: </label>
+                        <input id="pa_cedula" name="pa_cedula" class="inputs" type="number" min="1" placeholder="Digite su número de cédula">
+                    </div>
+
+                    <div class="caja">
+                        <label for="edad" class="labels">Fecha de nacimiento: </label>
+                        <input id="edad" name="edad" class="inputs" type="date">
+                    </div>
+
+                    <div class="caja">
+                        <label for="telefono" class="labels">Telefono: </label>
+                        <input id="telefono" name="telefono" class="inputs" type="tel" placeholder="Digite su número de telefono">
+                    </div>
+
+                    <div class="caja">
+                        <label for="pa_especialidad" class="labels">Especialidad requerida: </label>
+                        <select id="pa_especialidad" name="pa_especialidad" class="inputs">
+                            <option value="Especialidad">Seleccione una especialidad</option>
+                            <option value="Medicina general">Medicina general</option>
+                            <option value="Cardiologia">Cardiología</option>
+                            <option value="Medicina interna">Medicina interna</option>
+                            <option value="Dermatologia">Dermatología</option>
+                            <option value="Rehabilitacion física">Rehabilitación física</option>
+                            <option value="Psicologia">Psicología</option>
+                            <option value="Odontologia">Odontología</option>
+                            <option value="Radiologia">Radiología</option>
+                        </select>
+                    </div>
+                    <!------------------------>
+
+                    <!-- Boton de envio -->
+                    <button id="boton" name="pa_boton">Enviar</button>
+                    <!------------------------>
+                </form>
+            </div>
+            <!-- Listado de pacientes -->
+            <div id="lista" name="lista" class="paciente lista_none">
+                <h3 class="fir_enun">Listado de Pacientes</h2>
+            </div>
+            <!-------------------------->
+    </main>
+
+    
+</body>
+    <!-- Script -->
+    <script src="../js/scripts_paciente.js"></script>
+    <!------------>
+</html>
