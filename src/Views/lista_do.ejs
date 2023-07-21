@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Librerias de estilo -->
+    <link rel="stylesheet" href="../css/estilo.css" type="text/css">
+    <link rel="stylesheet" href="./css/fontello.css" type="text/css">
+    <!------------------------->
+    <title>Doctores</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <img class="logo" src="/img/Las-Cruces-B.png">
+                Listado de Doctores
+                <img class="logo" src="/img/Las-Cruces-B.png">
+            </h1>
+        <hr>
+        <%- include('navBar') %>
+</header>
+    <div id="lista" name="lista" class="doctor lista_style">
+        <h3 class="fir_enun">Listado de Doctores</h2>
+            <table>
+                <thead class="doc_th">
+                    <tr>
+                        <th scope="col">Cedula de Ciudadania</th>
+                        <th scope="col">Nombres</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Especialidad</th>
+                        <th scope="col">Consultorio</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="doc_tr">
+                    <!-- <% consultaDoc.forEach( d => { %> -->
+                        <tr>
+                            <td scope="row"><%= d.Cedula %></td>
+                            <td><%= d.Nombres %></td>
+                            <td><%= d.Apellidos %></td>
+                            <td><%= d.Especialidad %></td>
+                            <td><%= d.Consultorio %></td>
+                            <td><%= d.Correo %></td>
+                            <td>
+                                <a href="/lista_do/editar/ <%= d.Cedula %>" class="btn icon-edit">Editar</a>
+                                <a  href="/lista_do/borrar/ <%= d.Cedula %>"  class="btn  icon-trash-empty">Borrar</a>
+                            </td>
+                        </tr>
+                    <!-- <% }) %> -->
+                </tbody>
+            </table>
+    </div>
+ 
+</body>
+<!-- Script -->
+<!-- <script src="./listas.js"></script> -->
+<!------------>
+</html>

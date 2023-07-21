@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Librerias de estilo -->
+    <link rel="stylesheet" href="../css/estilo.css" type="text/css">
+    <link rel="stylesheet" href="./css/fontello.css" type="text/css">
+    <!------------------------->
+    <title>Citas médicas</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <img class="logo" src="/img/Las-Cruces-B.png">
+                Listado de Citas
+                <img class="logo" src="/img/Las-Cruces-B.png">
+            </h1>
+        <hr>
+        <%- include('navBar') %>
+</header>
+    <div id="lista" name="lista" class="citas lista_style">
+        <h3 class="fir_enun">Listado de Citas</h2>
+            <table>
+                <thead class="cit_th">
+                    <tr>
+                        <th scope="col">CC del Paciente</th>
+                        <th colspan="2" scope="col">Paciente</th>
+                        <th scope="col">CC del Doctores</th>
+                        <th colspan="2" scope="col">Doctor</th>
+                        <th scope="col">Especialidad requerida</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="cit_tr">
+                    <% consultaLista.forEach( c => { %>
+                        <tr>
+                            <td scope="row"><%= c.CedP %></td>
+                            <td><%= c.NomP %></td>
+                            <td><%= c.ApeP %></td>
+                            <td><%= c.CedD %></td>
+                            <td><%= c.NomD %></td>
+                            <td><%= c.ApeD %></td>
+                            <td><%= c.EspC %></td>
+                            <td>
+                                <span><a href="/lista_ci/editar/ <%= c.CedP %>" class="btn icon-edit">Editar</a></span>
+                                <span><a  href="/lista_ci/borrar/ <%= c.CedP %>"  class="btn icon-trash-empty">Borrar</a></span>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+    </div>
+ 
+</body>
+<!-- Script -->
+<!-- <script src="./listas.js"></script> -->
+<!------------>
+</html>

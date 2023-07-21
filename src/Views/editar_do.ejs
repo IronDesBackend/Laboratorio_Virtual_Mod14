@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Librerias de estilo -->
+    <link rel="stylesheet" href="/css/estilo.css" type="text/css">
+    <!------------------------->
+    <title>Actualizar Doctores</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <img class="logo" src="/img/Las-Cruces-B.png">
+                Doctores
+                <img class="logo" src="/img/Las-Cruces-B.png">
+            </h1>
+        <hr>
+        <%- include('navBar') %>
+</header>
+    <main id="main">
+        <h3 class="fir_enun">Editar Doctor.</h3>
+            <div>
+                <form action="/lista_do/actualizar" method="post" class="doctor">
+                    <!-- Datos del doctor -->
+                    <div class="caja">
+                        <label for="do_name" class="labels">Nombre: </label>
+                        <input id="do_name" name="do_name" class="inputs" type="text" value=" <%= doctores.Nombres %> ">
+
+                        <label for="do_lastname" class="labels">Apellido: </label>
+                        <input id="do_lastname" name="do_lastname" class="inputs" type="text" value=" <%= doctores.Apellidos %> ">
+                    </div>
+
+                    <div class="caja">
+                        <label for="do_cedula" class="labels">Número de cédula: </label>
+                        <input id="do_cedula" name="do_cedula" class="inputs" type="number" min="1" value= <%= doctores.Cedula %> >
+                    </div>
+
+                    <div class="caja">
+                        <label for="do_especialidad" class="labels">Especialidad requerida: </label>
+                        <select id="do_especialidad" name="do_especialidad" class="inputs">
+                            <option value="Especialidad">Seleccione una especialidad</option>
+                            <option value="Medicina general">Medicina general</option>
+                            <option value="Cardiologia">Cardiología</option>
+                            <option value="Medicina interna">Medicina interna</option>
+                            <option value="Dermatologia">Dermatología</option>
+                            <option value="Rehabilitacion física">Rehabilitación física</option>
+                            <option value="Psicologia">Psicología</option>
+                            <option value="Odontologia">Odontología</option>
+                            <option value="Radiologia">Radiología</option>
+                        </select>
+                    </div>
+
+                    <div class="caja">
+                        <label for="consul" class="labels">Consultorio: </label>
+                        <input id="consul" name="consul" class="inputs" type="number" min="1" max="999" value= <%= doctores.Consultorio %> >
+                    </div>
+
+                    <div class="caja">
+                        <label for="email" class="labels">Correo electronico: </label>
+                        <input id="email" name="email" class="inputs" type="email" value=" <%= doctores.Correo %> ">
+                    </div>
+                    <!------------------------>
+
+                    <!-- Boton de envio -->
+                    <button id="boton" name="do_boton">Actualizar</button>
+                    <!------------------------>
+                </form>
+            </div>
+    </main>
+</body>
+</html>

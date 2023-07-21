@@ -3,9 +3,9 @@ const boton = document.getElementById("boton");
 
 //Eventos
 boton.addEventListener("click", (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     validarPaciente();
-    enviarP();
+    // enviarP();
 });
 
 //Variables
@@ -23,6 +23,22 @@ function validarPaciente () {
     let validacion = true;
     let alerta = 'Los siguientes parametros no son validos:\r\n';
 
+/*
+//Idea para hacer modulos    
+
+    // let NameP = document.getElementById('pa_name').value;
+    // let LnameP = document.getElementById('pa_lastname').value;
+    // let CedulaP = document.getElementById('pa_cedula').value;
+    // let EspecialidadP = document.getElementById('pa_especialidad').value;
+
+    //Validación de inputs
+    // valCom.validarCedula(CedulaP)
+    // valCom.validarCedula(NameP)
+    // valCom.validarCedula(LnameP)
+    // valCom.validarCedula(EspecialidadP)
+    // valCom.validacion
+*/
+
     //Clase que modifica los inputs en caso de error
     function addWarning(b) {
         let error = document.getElementsByClassName('inputs')[b]
@@ -36,6 +52,7 @@ function validarPaciente () {
 
     //Validación de inputs
     function validarNombre() {
+        
         let NameP = document.getElementById('pa_name').value;
 
         if (!valName.test(NameP)) {
@@ -50,6 +67,7 @@ function validarPaciente () {
     validarNombre();
 
     function validarApellido() {
+        
         let LnameP = document.getElementById('pa_lastname').value;
         
         if (!valName.test(LnameP)) {
@@ -64,6 +82,7 @@ function validarPaciente () {
     validarApellido();
 
     function validarCedula() {
+        
         let CedulaP = document.getElementById('pa_cedula').value;
         
         if (!valCedula.test(CedulaP)) {
@@ -78,9 +97,10 @@ function validarPaciente () {
     validarCedula();
 
     function validarEdad() {
+        
         let EdadP = 
             new Date().getFullYear() - new Date(document.getElementById('edad').value).getFullYear();
-
+console.log(document.getElementById('edad').value)
         if (EdadP<1 || isNaN(EdadP)) {
             EdadP = 0;
             validacion = false;
@@ -93,6 +113,7 @@ function validarPaciente () {
     validarEdad();
 
     function validarTelefono() {
+        
         let TelefonoP = document.getElementById('telefono').value;
         
         if (!valTel.test(TelefonoP)) {
@@ -106,7 +127,9 @@ function validarPaciente () {
 
     validarTelefono();
 
+    
     function validarEspecialidad() {
+        
         let EspecialidadP = document.getElementById('pa_especialidad').value;
         
         if (EspecialidadP === 'Especialidad') {
@@ -119,9 +142,11 @@ function validarPaciente () {
 
     validarEspecialidad();
 
+
     //Ultima validación de campos llenos
     if (validacion === false) {
         alert(alerta + "Por favor, ingrese valores validos.");
+        
         } else {
             alert ('Información enviada')
             //Creacion del objeto Persona
@@ -133,7 +158,6 @@ function validarPaciente () {
                 Telefono : validarTelefono(),
                 Especialidad : validarEspecialidad()
             };
-
             //Envio de Persona al arreglo Pacientes
             Pacientes.push(Persona);
     

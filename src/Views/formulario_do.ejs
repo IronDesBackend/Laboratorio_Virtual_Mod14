@@ -4,39 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Librerias de estilo -->
-    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/estilo.css" type="text/css">
     <!------------------------->
     <title>Doctores</title>
 </head>
 <body>
     <header>
-        <h1 class="fir_enun">
-            <img class="logo" src="../img/Las-Cruces-B.png">
+        <h1>
+            <img class="logo" src="/img/Las-Cruces-B.png">
                 Formulario para Doctores
-            <img class="logo" src="../img/Las-Cruces-B.png">
-        </h1>
+                <img class="logo" src="/img/Las-Cruces-B.png">
+            </h1>
         <hr>
-        <nav>
-            <a id="vinculo_pa" href="./formulario_pa.html">
-                <div id="main_paci" class="caja_index">
-                    <!-- <h3>Pacientes</h3> Nombre del recurso-->
-                    <img src="../img/Paciente-sinFon.png">
-                </div>
-            </a>
-            <a id="vinculo_ini" href="./index.html">
-                <div id="inicio" class="caja_index">
-                    <!-- <h3>Inicio</h3> Nombre del recurso-->
-                    <img src="../img/Las-Cruces.png">
-                </div>
-            </a>
-        </nav>
-        <hr>
-    </header>
+        <%- include('navBar') %>
+</header>
     <main id="main">
         <h3 class="fir_enun">Rellene los siguientes campos.</h3>
             <div>
-                <form class="doctor">
-                    <!-- Datos del paciente -->
+                <form action="/envio_do" method="post" class="doctor">
+                    <!-- Datos del doctor -->
                     <div class="caja">
                         <label for="do_name" class="labels">Nombre: </label>
                         <input id="do_name" name="do_name" class="inputs" type="text" placeholder="Ingrese su nombre completo">
@@ -91,6 +77,6 @@
     </main>
 </body>
     <!-- Script -->
-    <script src="../js/scripts_doctor.js"></script>
+    <script src="../scripts_doctor.js"></script>
     <!------------>
 </html>
