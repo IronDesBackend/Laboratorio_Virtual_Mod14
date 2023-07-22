@@ -16,7 +16,6 @@
                 Listado de Citas
                 <img class="logo" src="/img/Las-Cruces-B.png">
             </h1>
-        <hr>
         <%- include('navBar') %>
 </header>
     <div id="lista" name="lista" class="citas lista_style">
@@ -35,16 +34,16 @@
                 <tbody class="cit_tr">
                     <% consultaLista.forEach( c => { %>
                         <tr>
-                            <td scope="row"><%= c.CedP %></td>
-                            <td><%= c.NomP %></td>
-                            <td><%= c.ApeP %></td>
-                            <td><%= c.CedD %></td>
-                            <td><%= c.NomD %></td>
-                            <td><%= c.ApeD %></td>
-                            <td><%= c.EspC %></td>
+                            <td scope="row"><%=c.CedP%></td>
+                            <td><%=c.NomP%></td>
+                            <td><%=c.ApeP%></td>
+                            <td><%=c.CedD%></td>
+                            <td><%=c.NomD%></td>
+                            <td><%=c.ApeD%></td>
+                            <td><%=c.EspC%></td>
                             <td>
-                                <span><a href="/lista_ci/editar/ <%= c.CedP %>" class="btn icon-edit">Editar</a></span>
-                                <span><a  href="/lista_ci/borrar/ <%= c.CedP %>"  class="btn icon-trash-empty">Borrar</a></span>
+                                <span><a href="/lista_ci/editar/ <%= c.CedP, c.EspC %>" class="btn icon-edit">Editar</a></span>
+                                <span><a  href="/lista_ci/borrar/ <%=c.CedP%> / <%=c.EspC%>"  class="btn icon-trash-empty">Borrar</a></span>
                             </td>
                         </tr>
                     <% }) %>

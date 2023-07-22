@@ -4,7 +4,7 @@
   "description": "El presente laboratorio virtual es un aplicativo web,\r que por medio de formularios recibe información de dos \r tipos de personas epecificas, pacientes y doctores.",
   "main": "conexion.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose "
   },
   "keywords": [],
   "author": "Juan Sebastian Bocanegra Barrera",
@@ -14,5 +14,9 @@
     "express": "^4.18.2",
     "mysql": "^2.18.1",
     "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.6.1",
+    "supertest": "^6.3.3"
   }
 }

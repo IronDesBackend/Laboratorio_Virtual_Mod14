@@ -38,10 +38,12 @@ CREATE TABLE `citas` (
 --
 
 INSERT INTO `citas` (`Cedula_Paciente`, `Especialidad`, `Disponibilidad_Doctor`) VALUES
-(1, 'Cardiologia', 1),
-(1, 'Radiologia', 1),
-(3, 'Cardiologia', 1),
-(3, 'Radiologia', 1);
+(1, 'Cardiología', 1),
+(3, 'Radiología', 1);
+(2, 'Medicina interna', 1),
+(6, 'Medicina general', 1),
+(4, 'Dermatología', 1);
+(5, 'Psicología', 1),
 
 -- --------------------------------------------------------
 
@@ -64,9 +66,12 @@ CREATE TABLE `doctores` (
 --
 
 INSERT INTO `doctores` (`Cedula`, `Nombres`, `Apellidos`, `Especialidad`, `Consultorio`, `Correo`, `Disponibilidad`) VALUES
-(2, 'Juan Ramiro', 'Bocanegra Gonzales', 'Cardiologia', 15, 'paco@correo.com', 1),
-(3, ' Gabo ', ' Garcia ', 'Especialidad', 4, 'fabri@correo.com', 1),
-(1515151515, 'Juja juja', 'jujajua', 'Radiologia', 222, 'tomy@correo.com', 1);
+(1, 'Juan Estebas', 'Bocanegra Gonzales', 'Cardiología', 15, 'paco@correo.com', 1),
+(2, 'Gabriel Ramiro', 'Garcia Garcia ', 'Medicina interna', 4, 'fabri@correo.com', 1),
+(3, 'Maria Jose', 'Monsalve Barreto', 'Radiología', 222, 'tomy@correo.com', 1);
+(4, 'Sebastian', 'Hernandez Garcia', 'Dermatología', 15, 'paco@correo.com', 1),
+(5, 'Anyel Maria', 'Nova Silva', 'Psicología', 4, 'fabri@correo.com', 1),
+(6, 'Esteban Javier', 'Rodriguez Ramirez', 'Medicina general', 222, 'tomy@correo.com', 1);
 
 -- --------------------------------------------------------
 
@@ -89,9 +94,12 @@ CREATE TABLE `pacientes` (
 --
 
 INSERT INTO `pacientes` (`Cedula`, `Nombres`, `Apellidos`, `Fecha_Nacimiento`, `Edad`, `Telefono`, `Especialidad`) VALUES
-(1, 'Juan Esteban', 'Bocanegra Ramirez', '0000-00-00', 22, '1212121212', 'Cardiologia'),
-(3, 'gagaga', 'faf', '2018-04-05', 5, '3152390495', 'Cardiologia'),
-(100012332, 'gaga', 'gaga', '2015-03-04', 8, '3152390495', 'Cardiologia');
+(1, 'Juan Sebastian', 'Bocanegra Barrera', '2002-04-04', 22, '1212121212', 'Cardiologia'),
+(2, 'Maria', 'Cardozo Ramiro', '2018-04-05', 5, '3152390495', 'Medicina interna'),
+(3, 'Kateryne', 'Lopez', '2015-03-04', 8, '3152390495', 'Radiología');
+(4, 'Mallery', 'Bocanegra Ramirez', '2002-04-04', 22, '1212121212', 'Dermatología'),
+(5, 'Gabriela', 'Moncada', '2018-04-05', 5, '3152390495', 'Psicología'),
+(6, 'Juliana', 'Rodriguez Cardozo', '2015-03-04', 8, '3152390495', 'Medicina general');
 
 --
 -- Índices para tablas volcadas

@@ -2,10 +2,8 @@
 const boton = document.getElementById("boton");
 
 //Eventos
-boton.addEventListener("click", (e) => {
-    // e.preventDefault();
+boton.addEventListener("click", () => {
     validarDoctor();
-    // enviarD();
 });
 
 //Variables
@@ -123,93 +121,6 @@ function validarDoctor () {
         alert(alerta + "Por favor, ingrese valores validos.");
         } else {
             alert ('Información enviada')
-            //Creacion del objeto Doctor
-            const Doctor = {
-                Cedula : validarCedula(),
-                Nombres : validarNombre(),
-                Apellidos : validarApellido(),
-                Especialidad : validarEspecialidad(),
-                Consultorio : validarConsultorio(),
-                Correo : validarCorreo(),
-            };
-
-            //Envio de Doctor al arreglo Doctores
-            Doctores.push(Doctor);
-
-            //Transformación de Doctores a json_Doctores
-            let  jsonDoctores = JSON.stringify(Doctores);
-
-            //Transformación del json_Doctores a objDoctores
-            let objDoctores = JSON.parse(jsonDoctores);
-            generarLista(objDoctores)
         }
 
-}
-
-
-//Lista de Doctores
-function generarLista(objDoctores) {
-    //Etiquetas del objDoctores
-    let name_col = ['Cedula de Ciudadania', 'Nombres', 'Apellidos', 'Especialidad', 'Consultorio', 'Correo electronico'];
-
-    //Creación de la lista
-    let lista_container = document.getElementById("lista");
-        lista_container.classList.remove('lista_none');
-        lista_container.classList.add('lista_style');
-    
-        let tabla_doctores = document.createElement('table');
-        let thead_doctores = document.createElement('thead');
-        let tbody_doctores = document.createElement('tbody');
-        thead_doctores.classList.add('doc_th')
-        tbody_doctores.classList.add('doc_tr')
-
-        //Creación de los campos de la lista
-        function campos (a) {
-            let tr_doctores = document.createElement('tr');
-            for (let x in a) {
-                let th_doctores = document.createElement('th');
-                let cont = document.createTextNode(a[x]);
-                th_doctores.appendChild(cont);
-                tr_doctores.appendChild(th_doctores);
-            }
-            thead_doctores.appendChild(tr_doctores);
-        }
-
-        //Creación de los registros o tuplas de la lista
-        function registros () {
-            for (let i in objDoctores) {
-                let lis_doctores = objDoctores[i];
-                for (let y = 0; y < 1; y++ ) {
-                    let tupla = document.createElement('tr');
-                    for (let z in lis_doctores) {
-                        let celda = document.createElement("td");
-                        let valor = document.createTextNode(lis_doctores[z]);
-                        celda.appendChild(valor);
-                        tupla.appendChild(celda);
-                    }
-                    tbody_doctores.appendChild(tupla);
-                }
-                enlista++;
-            }
-            tabla_doctores.appendChild(thead_doctores);
-            tabla_doctores.appendChild(tbody_doctores);
-            lista_container.appendChild(tabla_doctores);
-        }
-
-        //Llenado de la lista y eliminación de listas antiguas
-        if (enlista === 0){
-            campos(name_col);
-            registros();
-        } else {
-            let tabla_desechable = document.getElementsByTagName('table');
-            tabla_desechable[0].remove();
-                campos(name_col);
-                registros();
-            }
-}
-
-//Reinicio de formulario
-function enviarD () {
-    let form = document.querySelector('.doctor');
-    form.reset();
 }
